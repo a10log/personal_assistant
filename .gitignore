@@ -1,0 +1,4 @@
+# uv
+.python-version
+.venv
+uv.lock
