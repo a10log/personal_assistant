@@ -22,7 +22,6 @@ def fn(message, history):
 theme = gr.themes.Default(
     primary_hue="blue",
     secondary_hue="indigo",
-    font=["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
 )
 
 dark_mode_js = """

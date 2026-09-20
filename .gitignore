@@ -8,3 +8,8 @@ uv.lock
 
 # creds
 .env
+
+# data
+*.db
+*.csv
+*.xlsx
