@@ -5,3 +5,6 @@ uv.lock
 
 # cache
 **__pycache__
+
+# creds
+.env
