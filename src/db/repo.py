@@ -1,10 +1,10 @@
 
-import datetime
 from sqlalchemy import select
+
 from src.db.models import TaskORM
 from src.db.session import async_session
-from src.schemas.models import Task
 from src.schemas.constants import TaskStatus
+from src.schemas.models import Task
 
 
 async def save_task(task: Task) -> Task:

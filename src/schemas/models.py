@@ -1,6 +1,9 @@
 import datetime
+
 from pydantic import BaseModel, Field
+
 from src.schemas.constants import TaskStatus
+
 
 class Task(BaseModel):
     """Модель задачи."""

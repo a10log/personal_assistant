@@ -24,5 +24,7 @@ dependencies = [
 dev = [
     "ipykernel>=7.3.0",
     "pandas>=3.0.6",
+    "pre-commit>=4.6.2",
     "pytest>=9.1.1",
+    "ruff>=0.16.8",
 ]

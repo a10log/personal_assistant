@@ -1,8 +1,10 @@
-from langgraph.runtime import Runtime
 from langchain_core.messages import SystemMessage
+from langgraph.runtime import Runtime
+
 from src.context.context import Context
-from src.schemas.state import AgentState
 from src.schemas.output import ClassifyScenarioOutputSchema
+from src.schemas.state import AgentState
+
 
 async def classify_scenario(state: AgentState, runtime: Runtime[Context]):
 	system_prompt: str = runtime.context.prompts["main_system_prompt"]

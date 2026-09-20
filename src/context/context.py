@@ -1,8 +1,9 @@
 import os
 from dataclasses import dataclass
 
-from pydantic import Field
 from langchain_gigachat.chat_models import GigaChat
+from pydantic import Field
+
 from src.context.prompt_provider import SystemPromptProvider
 
 

@@ -1,5 +1,6 @@
 from enum import StrEnum
 
+
 class TaskStatus(StrEnum):
     """Статусы задачи."""
     TODO = "TODO"

@@ -1,5 +1,7 @@
 from pathlib import Path
+
 from langgraph.graph.state import CompiledStateGraph
+
 
 def save_graph_image(graph: CompiledStateGraph) -> None:
     save_dir = Path("images/graphs")
@@ -11,3 +13,6 @@ def save_graph_image(graph: CompiledStateGraph) -> None:
         filename.write_bytes(png_data)
     except Exception as e:
         print(f"Не удалось сохранить граф: {e}")
+
+
+__all__ = ["save_graph_image"]

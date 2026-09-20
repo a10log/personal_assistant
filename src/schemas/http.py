@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class ChatRequestSchema(BaseModel):
 	message: str
 	thread_id: str

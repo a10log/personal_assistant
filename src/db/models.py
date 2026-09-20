@@ -1,7 +1,10 @@
-import uuid
 import datetime
-from sqlalchemy import String, Date, Text, Enum as SAEnum
+import uuid
+
+from sqlalchemy import Date, String, Text
+from sqlalchemy import Enum as SAEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+
 from src.schemas.constants import TaskStatus
 
 
