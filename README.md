@@ -1,5 +1,8 @@
 # Personal assistant
 
+## Граф агента
+![](images/graphs/graph.png)
+
 ## Установка зависимостей
 ```bash
 uv sync
