@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
 
-from src.context.context import get_context
+from src.context.context import get_agent_context
 from src.db.session import init_db
 from src.graph import get_graph
 from src.schemas.http import ChatRequestSchema, ChatResponseSchema
@@ -31,8 +31,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(lifespan=lifespan)
 graph = get_graph(checkpointer=MemorySaver())
-context = get_context()
-
+context = get_agent_context()
 
 
 @app.post("/chat")

@@ -3,12 +3,12 @@ import json
 from langchain_core.messages import AIMessage, SystemMessage, ToolMessage
 from langgraph.runtime import Runtime
 
-from src.context.context import Context
+from src.context.context import AgentContext
 from src.scenarios.tasks.tools import task_tools_dict, task_tools_list
 from src.schemas.state import AgentState
 
 
-async def call_llm_with_tools(state: AgentState, runtime: Runtime[Context]):
+async def call_llm_with_tools(state: AgentState, runtime: Runtime[AgentContext]):
 	system_prompt: str = runtime.context.prompts["main_system_prompt"]
 	system_msg: SystemMessage = SystemMessage(content=system_prompt)
 	llm_with_tools = runtime.context.llm.bind_tools(task_tools_list)

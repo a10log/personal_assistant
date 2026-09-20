@@ -8,12 +8,12 @@ from src.context.prompt_provider import SystemPromptProvider
 
 
 @dataclass
-class Context:
+class AgentContext:
 	llm: GigaChat = Field(description="Базовый ЛЛМ провайдер")
 	prompts: SystemPromptProvider = Field(description="Подгружает промпты")
 
-def get_context():
-	return Context(
+def get_agent_context():
+	return AgentContext(
 		prompts=SystemPromptProvider(),
 		llm=GigaChat(
 			credentials=os.environ["GIGACHAT_CREDENTIALS"],
