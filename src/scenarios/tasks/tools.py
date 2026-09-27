@@ -56,18 +56,31 @@ async def create_task(
     return f"Задача «{name}» создана на {parsed_date.isoformat()}"
 
 
+def _esc(s: str) -> str:
+    """Экранирует вертикальную черту для Markdown-таблицы."""
+    return s.replace("|", "\\|")
+
 @tool
 async def get_todo_task_list() -> str:
-    """Возвращает список невыполненных задач."""
+    """Возвращает список невыполненных задач в виде ГОТОВОЙ Markdown-таблицы.
+
+    Результат нужно вставить в ответ дословно, как есть,
+    не переформатируя и не превращая в список.
+    """
     tasks = await get_tasks_by_status(TaskStatus.TODO)
     if not tasks:
         return "Список задач пуст."
-    lines = []
-    for t in tasks:
-        desc = f" — {t.description}" if t.description else ""
-        lines.append(f"• {t.name} (до {t.date.isoformat()}){desc}")
-    return "\n".join(lines)
 
+    lines = [
+        "| Задача | Срок | Описание |",
+        "| --- | --- | --- |",
+    ]
+    for t in tasks:
+        desc = t.description or "—"
+        lines.append(
+            f"| {_esc(t.name)} | {t.date.isoformat()} | {_esc(desc)} |"
+        )
+    return "\n".join(lines)
 
 @tool
 async def complete_task(

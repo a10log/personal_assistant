@@ -39,7 +39,7 @@ dark_mode_js = """
 chat = gr.ChatInterface(
     fn=fn,
     title="AI-Ассистент",
-    description="Твой помощник для Git, SSH и скриптов",
+    description="Твой помощник для работы с задачами",
     examples=[
 		"Посмотреть список задач",
         "Создать новую задачу",
